@@ -189,7 +189,7 @@ const Menu = {
                                 <td>${item.qtyAvailable}</td>
                             </tr>
                             <tr>
-                                <td>${item.measure + " por unidade"}</td>
+                                <td>${item.measure + " por produto"}</td>
                                 <td>${item.qtyPerUnity + item.measure}</td>
                             </tr>
                             <tr>
@@ -259,7 +259,7 @@ const Menu = {
                             <td><input type="number" id="editQtyAvailable" contentEditable="true" value="${item.qtyAvailable}"></td>
                         </tr>
                         <tr>
-                            <td>${item.measure + " por unidade"}</td>
+                            <td id="measureLabel">${item.measure + " por produto"}</td>
                             <td><input type="number" id="editQtyPerUnity" contentEditable="true" value="${item.qtyPerUnity}"></td>
                         </tr>
                         <tr>
@@ -305,6 +305,11 @@ const Menu = {
                     e.preventDefault() ;
                 }
             })
+
+
+            document.getElementById("editMeasure").addEventListener("change", (event) => {
+                document.getElementById("measureLabel").innerText = event.target.value + " por produto";
+            });
         },
 
         addForm() {
@@ -325,7 +330,7 @@ const Menu = {
                             <td><input type="number" id="editQtyAvailable" contentEditable="true" value="0"></td>
                         </tr>
                         <tr>
-                            <td>kg por unidade</td>
+                            <td>un por Produto</td>
                             <td><input type="number" id="editQtyPerUnity" contentEditable="true" value="0"></td>
                         </tr>
                         <tr>
@@ -479,6 +484,7 @@ const Site = {
         Storage.set("Site",config);
         document.getElementById("siteName").innerText = name;
         document.getElementById("siteLogo").src = logo;
+        document.getElementById("siteIcon").href = logo;
     },
 
     resizeWindow() {

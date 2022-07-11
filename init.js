@@ -6,6 +6,7 @@ if (site == null || site.name == undefined || site.logo == undefined) {
 } else {
     document.getElementById("siteName").innerText = site.name;
     document.getElementById("siteLogo").src = site.logo;
+    document.getElementById("siteIcon").href = site.logo;
 }
 
 if (Storage.get("Items") == undefined) {
