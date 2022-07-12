@@ -72,6 +72,24 @@ img {
     color: white;
 }
 
+input[type="file"] {
+    display: none;
+}
+
+.getFileContainer label {
+    margin: 10px 0 10px 2px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+}
+
+.getFileContainer label img {
+    display: flex;
+    align-items: center;
+    width: 26px;
+    height: 26px;
+}
+
 /* ======== Header ======== */
 
 header {

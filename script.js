@@ -466,7 +466,11 @@ const Site = {
         let tableContent = `
             <form onsubmit="event.preventDefault(); Site.saveConfig(); Menu.switch()">
                 <input type="text" id="editSiteName" value="${name}" placeholder="Nome do Site" style="${inputStyle}" required>
-                <input type="text" id="editSiteLogo" value="${logo}" placeholder="Link da Logotipo" style="${inputStyle}" required>
+                <div class="getFileContainer" style="display: flex;">
+                    <input type="text" id="editSiteLogo" value="${logo}" placeholder="Link da Logotipo" style="${inputStyle}" required>
+                    <label for="selectLocalImg"><img src="https://raw.githubusercontent.com/DaviSenai/e-commerce/main/icons/searchImg.png"></label>
+                    <input type="file" id="selectLocalImg" accept="image/png, image/gif, image/jpeg">
+                </div>
                 <div>
                     <input type="submit" value="Confirmar" class="gradientButton" style="width: fit-content; height: fit-content; padding: 5px; margin: 0 0 0 auto; color: white;">
                 </div>
@@ -475,6 +479,11 @@ const Site = {
         Menu.setContent(tableContent);
         Menu.isOpened = true;
         Menu.show();
+.continuar Daqui ===============================
+        document.getElementById("selectLocalImg").addEventListener('change', (event) => {
+            console.log(this.files[0].mozFullPath);
+            // document.getElementById("editSiteLogo").value = event.srcElement.value;
+        });
     },
 
     saveConfig() {
