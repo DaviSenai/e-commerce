@@ -1,0 +1,422 @@
+
+body {
+    margin: 0;
+    background-image: linear-gradient(to right, #006175 0%, #00a950 100%);
+    font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+    min-width: 720px;
+    overflow-x: hidden;
+}
+
+
+img {
+	margin: auto;
+	user-select: none;
+	pointer-events: none;
+}
+
+/* ======== Buttons ======== */
+
+.simpleButton {
+    width: 80px;
+    height: 30px;
+    margin: 10px 5px;
+    border: 1px solid #767676;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.simpleButton:hover {
+    opacity: .9;
+}
+
+.gradientButton {
+    position: relative;
+    display: block;
+    width: 7em;
+    height: 50px;
+    color: #00a84f;
+    background-image: linear-gradient(to right, #006175 0%, #00a950 100%);
+    margin: 5px;
+    padding: 4px;
+    border: 0;
+    border-radius: 40px;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-size: 1.4em;
+    /* font-weight: bold; */
+    z-index: 2;
+}
+
+.gradientButton:hover {
+    color: #fff;
+}
+
+.gradientButton span {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background: #0e0e10;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+    transition: background 0.5s ease;
+}
+
+.gradientButton:hover span {
+    background: transparent;
+}
+
+.gradientButton.active span {
+    background: transparent;
+    color: white;
+}
+
+input[type="file"] {
+    display: none !important;
+}
+
+.getFileContainer label {
+    margin: 10px -6px 10px 2px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+}
+
+.getFileContainer label img {
+    display: flex;
+    align-items: center;
+    width: 26px;
+    height: 26px;
+}
+
+.getFileContainer input:nth-child(1) {
+    width: 100% !important;
+    margin: 10px auto !important;
+}
+
+.getFileContainer input:nth-child(2) {
+    display: block; margin: auto;
+    width: 100%;
+    margin: 10px auto;
+    padding: 3px;
+    border: 0;
+    border-radius: 5px;
+    color: black;
+    background: rgb(14, 14, 16, 0.1);
+}
+
+/* ======== Header ======== */
+
+header {
+    display: flex;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    background: rgba(34, 34, 34, .7);
+    user-select: none;
+    z-index: 5;
+}
+
+.center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#sitePropContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#sitePropContainer:hover{
+    opacity: .8;
+}
+
+#siteLogo {
+    border-radius: 5px;
+}
+
+#siteName {
+    margin: 10px;
+    color: white
+}
+
+#toolContainer {
+    display: flex;
+    margin-top: 5px;
+}
+
+#editContainer {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    width: 140px;
+    height: 45px;
+    top: 15px;
+    left: 100%;
+    border-radius: 5px;
+    background: rgba(200, 200, 200, .5);
+    transition: 0.5s ease;
+}
+
+#editContainer.active {
+    display: flex;
+    margin-left: -10px;
+    transform: translate(-100%);
+
+}
+
+#editContainer div {
+    cursor: pointer;
+}
+
+#editContainer img {
+    width: 35px;
+    height: 35px;
+    margin: 5px;
+    mask-repeat: round;
+    -webkit-mask-repeat: round;
+    background: linear-gradient(to right, #006175 0%, #00a950 100%);
+    filter: brightness(.8);
+}
+
+#editContainer div:hover img, #editContainer .active img {
+    filter: none;
+    background: #0E0E10;
+    width: 37px;
+    height: 37px;
+}
+
+/* ======== Main ======== */
+
+main {
+	margin: 0 75px 75px;
+}
+
+#itemContainer {
+    display: flex;
+    flex-flow: row wrap;
+	margin: 30px auto 50px auto;
+    width: 80%;
+    user-select: none;
+}
+
+#itemContainer .item {
+    cursor: pointer;
+	margin: 10px;
+	border-radius: 10px;
+	opacity: .9;
+	transition: box-shadow .2s ease-in-out,-webkit-box-shadow .2s ease-in-out;
+}
+
+#itemContainer .item:hover {
+	opacity: 1;
+	box-shadow: inset 0 0 1rem black, 0 0 1rem white;
+	border-radius: 10px;
+	padding-bottom: 0;
+}
+
+#itemContainer .item > div{
+	display: grid;
+	width: 230px;
+	background: white;
+	border-radius: 10px;
+}
+
+#itemContainer .img-container {
+	display: flex;
+	min-width: 175px;
+	min-height: 250px;
+}
+
+
+.description-container {
+    position: relative;
+	border-top: 2px outset lightgray;
+    height: 80px;
+    padding: 10px;
+}
+
+.price {
+	display: flex;
+	font-weight: bold;
+	font-size: 1.2rem;
+    margin-bottom: 2px;
+}
+
+
+.price span {
+	color: #008000;
+}
+
+.qtyAvailable {
+    position: absolute;
+	font-size: .8rem;
+	color: gray;
+	text-align: center;
+    bottom: 10px;
+}
+
+/* ======================== Scrollbar ======================== */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+/* ======================== Overlay ======================== */
+#overlay-box {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+#overlay-box.active {
+    display: flex;
+    min-height: 52rem;
+}
+
+#content-outside{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: 11;
+    position: fixed;
+    cursor: pointer;
+}
+
+#content-box {
+    position: relative;
+    border-radius: 20px;
+    
+    margin-top: 6rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-block-start: -120%;
+    transition: 0.7s;
+    min-width: 400px;
+    width: fit-content;
+    height: auto;
+    background-color: white;
+    z-index: 12;
+    padding: 30px;
+}
+
+#content-box .transition {
+	transition: 0.5s;
+	transition-timing-function: linear;
+	margin-block-start: 100px;
+}
+
+#content-box .closeContainer {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+	cursor: pointer;
+	color: #aaa;
+	font-weight: bold;
+	font-family: cursive;
+	text-shadow: 0 -1px 1px rgb(0 0 0 / 60%);
+	font-size: 18px;
+}
+
+#content-box p{
+	font-size: 14px;
+	margin-top: 0;
+	margin-bottom: 17px;
+}
+
+#overlay-box p {
+    width: 250px;
+    margin: auto;
+}
+
+#overlay-box table {
+    border: 2px solid #222222;
+    border-left: 0;
+    border-collapse: collapse;
+}
+
+#overlay-box table tbody {   
+    display: block;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 60vh;
+}
+
+
+#overlay-box table tr td {
+    width: 250px;
+    padding: 5px;
+    border-left: 2px solid #222222;
+}
+
+#overlay-box table tr td :is(p, input, select) {
+    width: 250px;
+    margin: auto;
+    border: 0;
+    border-radius: 5px;
+    padding: 3px;
+    background: rgb(14, 14, 16, 0.1);
+}
+
+#overlay-box table tr td:first-child {
+    width: 150px;
+}
+
+#overlay-box table tr:nth-child(odd) {
+    background: lightgray;
+}
+
+#menu-img-container {
+    position: relative;
+    display: none;
+    border: 2px solid #222222;
+    border-left: 0;
+}
+
+#menu-img-container img {
+    max-width: none;
+}
+
+#menu-img-container div {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+    
+}
+
+#menu-img-container div a {
+    margin: 10px auto;
+}
+
+
+
+
+

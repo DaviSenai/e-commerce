@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="siteTitle">Lojinha</title>
+    <link rel="icon" id="siteIcon">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <div id="sitePropContainer" onclick="Site.config()">
+            <img id="siteLogo" width="50" height="50">
+            <h1 id="siteName"></h1>
+        </div>
+        <div id="toolContainer" class="center">
+            <button class="gradientButton active" onclick="Site.setEditMode(1);"><span>Visualizar</span></button>
+            <button class="gradientButton" onclick="Site.setEditMode(2);"><span>Editar</span></button>
+        </div>
+        <div id="editContainer">
+            <div onclick="Menu.models.addForm()"><img width="35" src="https://raw.githubusercontent.com/DaviSenai/e-commerce/main/icons/blank.png" style="-webkit-mask-image: url(https://raw.githubusercontent.com/DaviSenai/e-commerce/main/icons/add.png);"></div>
+            <div onclick="Site.setEditMode(2)"><img width="35" src="https://raw.githubusercontent.com/DaviSenai/e-commerce/main/icons/blank.png" style="-webkit-mask-image: url(https://raw.githubusercontent.com/DaviSenai/e-commerce/main/icons/edit.png);"></div>
+            <div onclick="Site.setEditMode(3)"><img width="35" src="https://raw.githubusercontent.com/DaviSenai/e-commerce/main/icons/blank.png" style="-webkit-mask-image: url(https://raw.githubusercontent.com/DaviSenai/e-commerce/main/icons/delete.png);"></div>
+        </div>
+    </header>
+    <main>
+        <section id="itemContainer"></section>
+        <section>
+            <div id="overlay-box">
+                <div id="content-box">
+                    <div class="closeContainer rightAlign" onclick="Menu.switch()">x</div>
+                    <div id="content-menu"></div>
+                </div>
+                <div id="content-outside" onclick="Menu.switch()"></div>
+            </div>
+        </section>
+    </main>
+    <script type="text/javascript" src="./script.js"></script>
+    <script type="text/javascript" src="./init.js"></script>
+</body>
+</html>
